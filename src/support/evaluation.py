@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import json
 from sklearn.metrics import roc_curve, auc
 
 plt.style.use('ggplot')
@@ -15,6 +16,9 @@ def acc_n_loss(history):
     loss = history.history['loss']
     val_loss = history.history['val_loss']
 
+    with open("metrics.json", 'w') as outfile:
+        json.dump({"Training-accuracy": acc[-1], "Validation-accuracy": val_acc[-1], "Training-loss": loss[-1], "Validation-loss" : val_loss[-1]}, outfile)
+
     epochs = range(len(acc))
 
     plt.plot(epochs, acc, 'bo', label='Training accuracy')
@@ -28,7 +32,7 @@ def acc_n_loss(history):
     plt.title('Training and validation loss')
     plt.legend()
 
-    plt.show()
+    plt.savefig("by_region.png",dpi=80)
 
 
 def ROC_classes(n_classes, y_test, y_predict_proba, labels=[]):
