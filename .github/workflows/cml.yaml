@@ -13,7 +13,7 @@ jobs:
 
           # Your ML workflow goes here
           pip install -r requirements.txt
-          dvc pull .
+          dvc pull
           dvc repro
 
           # Write your CML report

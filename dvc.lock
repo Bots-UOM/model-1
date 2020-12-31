@@ -1,0 +1,11 @@
+get_data:
+  cmd: python src/support/get_data.py
+  deps:
+  - path: src/support/get_data.py
+    md5: 1337199b8ba4e3d91c86a8e4563dc0b0
+    size: 332
+  outs:
+  - path: data/
+    md5: d751713988987e9331980363e24189ce.dir
+    size: 0
+    nfiles: 0
