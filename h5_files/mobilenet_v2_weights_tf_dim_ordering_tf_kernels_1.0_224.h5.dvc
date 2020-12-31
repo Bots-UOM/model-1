@@ -1,0 +1,4 @@
+outs:
+- md5: 321911b381f6fd09b744356f6796ee18
+  size: 14536120
+  path: mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224.h5
