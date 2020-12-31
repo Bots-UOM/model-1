@@ -19,7 +19,7 @@ jobs:
           # Write your CML report
           git fetch --prune
           dvc push .
-          dvc metrics diff --show-md developer > report.md
+          dvc metrics diff --show-md main > report.md
 
           # add figures to the report
           echo "## Modle training results"
