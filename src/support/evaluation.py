@@ -8,6 +8,7 @@ plt.style.use('ggplot')
 from sklearn.metrics import confusion_matrix
 from src.support.cf_metrix import make_confusion_matrix
 
+
 # %matplotlib inline
 
 def acc_n_loss(history):
@@ -17,7 +18,8 @@ def acc_n_loss(history):
     val_loss = history.history['val_loss']
 
     with open("metrics.json", 'w') as outfile:
-        json.dump({"Training-accuracy": acc[-1], "Validation-accuracy": val_acc[-1], "Training-loss": loss[-1], "Validation-loss" : val_loss[-1]}, outfile)
+        json.dump({"Training-accuracy": acc[-1], "Validation-accuracy": val_acc[-1], "Training-loss": loss[-1],
+                   "Validation-loss": val_loss[-1]}, outfile)
 
     epochs = range(len(acc))
 
@@ -32,7 +34,7 @@ def acc_n_loss(history):
     plt.title('Training and validation loss')
     plt.legend()
 
-    plt.savefig("by_region.png",dpi=80)
+    plt.savefig("model_evolution.png", dpi=80)
 
 
 def ROC_classes(n_classes, y_test, y_predict_proba, labels=[]):

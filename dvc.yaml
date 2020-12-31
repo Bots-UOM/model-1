@@ -1,28 +1,21 @@
 stages:
-  fetch_data:
-    cmd: dvc pull .
-    outs:
-      - h5_files/
   get_data:
-    cmd: python get_data.py
+    cmd: python src/support/get_data.py
     deps:
-    - get_data.py
+    - src/support/get_data.py
     outs:
-    - data_raw.csv
-  process:
-    cmd: python process_data.py
+    - data/
+  process-train:
+    cmd: python src/model/training_model.py
     deps:
-    - process_data.py
-    - data_raw.csv
+    - src/model/training_model.py
+    - src/support/evaluation.py
+    - data/
+    - h5_files/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224.h5
     outs:
-    - data_processed.csv
-  train:
-    cmd: python train.py
-    deps:
-    - train.py
-    - data_processed.csv
-    outs:
-    - by_region.png
+    - h5_files/final_model.h5
+    - src/suppot/model_evolution.png
     metrics:
-    - metrics.json:
-        cache: false
+      - src/support/metrics.json:
+          cache: false
+
