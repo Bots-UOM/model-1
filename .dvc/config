@@ -2,8 +2,7 @@
     remote = storage
 ['remote "storage"']
     url = gdrive://1sV877iGNU5xH1zesRyzhWqXHyU4GD9uM
-    gdrive_client_id = 117012464597-v0ohcjk8h5npsb8450t5poev7cv1o92g.apps.googleusercontent.com
-    gdrive_client_secret = MRv_zwyZKClpaCTbyOTJXWuF
+    gdrive_client_id = 103636368050679720629
     gdrive_use_service_account = true
     gdrive_service_account_email = dvc-anomaly-storage@anomaly-detector-300610.iam.gserviceaccount.com
     gdrive_service_account_p12_file_path = ../anomaly-detector-300610-1282783bc9d2.p12
