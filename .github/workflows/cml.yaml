@@ -13,7 +13,8 @@ jobs:
 
           # Your ML workflow goes here
           pip install -r requirements.txt
-          dvc pull
+          dvc pull h5_files/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224.h5.dvc
+          dvc pull h5_files/final_model.h5.dvc
           dvc repro
 
           # Write your CML report
