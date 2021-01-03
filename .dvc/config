@@ -6,4 +6,4 @@
     gdrive_client_secret = MRv_zwyZKClpaCTbyOTJXWuF
     gdrive_use_service_account = true
     gdrive_service_account_email = nipunml01@gmail.com
-    gdrive_service_account_p12_file_path = "../'C:/Users/deela/Downloads/anomaly-detector-300610-1282783bc9d2.p12'"
+    gdrive_service_account_p12_file_path = ../anomaly-detector-300610-1282783bc9d2.p12
