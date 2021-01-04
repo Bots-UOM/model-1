@@ -19,7 +19,11 @@ jobs:
 
           # Write your CML report
           git fetch --prune
-          dvc push .
+          git add --all
+          git commit -m "remote training"
+          dvc commit
+          git push origin
+          dvc push
           dvc metrics diff --show-md main > report.md
 
           # add figures to the report
